@@ -1,33 +1,34 @@
 package com.stackroute;
 
 import com.stackroute.domain.Movie;
-import org.springframework.beans.factory.support.BeanDefinitionRegistry;
-import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.core.io.FileSystemResource;
-import org.springframework.core.io.Resource;
 
 public class Main {
     public static void main(String[] args) {
 
         /**Using ApplicationContext*/
-//        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
-//
-//        Movie movie = applicationContext.getBean("movie",Movie.class);
-//        System.out.println(movie);
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
 
+        /**Looking Movie beans using ApplicationContext and print out actor information*/
+        Movie movie1 = applicationContext.getBean("movie1", Movie.class);
+        System.out.println(movie1);
 
-        /**Using XmlBeanFactory*/
-        Resource resource = new FileSystemResource("src/main/resources/beans.xml");
-        XmlBeanFactory beanFactory = new XmlBeanFactory(resource);
+        Movie movie2 = applicationContext.getBean("movie2", Movie.class);
+        System.out.println(movie2);
+        /**Look up same movie bean(movie2) again*/
+        Movie movie2Dup = applicationContext.getBean("movie2", Movie.class);
+        /**Equality result of two movie beans
+         * Returns false if scope is defined to prototype else returns true*/
+        System.out.println(movie2 == movie2Dup);
 
-        Movie movie = beanFactory.getBean("movie", Movie.class);
-        System.out.println(movie);
+        Movie movie3 = applicationContext.getBean("movie3", Movie.class);
+        System.out.println(movie3);
 
-
-        /**Using Spring 3.2 BeanDefinitionRegistry and BeanDefinitionReader*/
-//        BeanDefinitionRegistry beanDefinitionRegistry= new BeanDefinitionRegistry("beans.xml");
-//beanDefinitionRegistry.getBeanDefinition("beans.xml");
+        /**Changed the id of Movie bean to name ="movieA, movieB" and trying to get Movie bean by it's 2 different values*/
+        Movie movieA = applicationContext.getBean("movieA", Movie.class);
+        System.out.println(movieA);
+        Movie movieB = applicationContext.getBean("movieB", Movie.class);
+        System.out.println(movieB);
     }
 }
