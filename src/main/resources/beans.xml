@@ -9,9 +9,6 @@
         <constructor-arg index="2" value="female"></constructor-arg>
     </bean>
 
-<!--    <bean id="movie" class="com.stackroute.domain.Movie" autowire="byName" scope="singleton">-->
-<!--    </bean>-->
-
     <bean id="movie" class="com.stackroute.domain.Movie" autowire="constructor">
     </bean>
 

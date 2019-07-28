@@ -1,18 +1,12 @@
 ## Spring Fundamentals with XML Configurations
 
-# Task 3:
+# Task 4:
 
-From the constructor-injection branch of spring-xml-demo repo created a
-autowire-xml branch.
 
-For the Movie bean, delete the constructor based object injection in the bean definition file
-(beans.xml) that injects an Actor bean.
+From the autowire-xml branch of spring-xml-demo repo created an aware-interface
+branch.
 
-Use autowire byName in the Movie bean to inject an Actor bean.
-Run the application.
+Implemented ApplicationContextAware, BeanFactoryAware, BeanNameAware in the
+Movie class and printed their results.
 
-Create another Movie bean and try autowire byType.
-Run the application and note the exception thrown.
-
-Fix the Movie bean by removing autowire byType and using constructor injection instead.
-Push the code to autowire-xml branch.
+Pushed the code to aware-interface branch.
