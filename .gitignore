@@ -1,0 +1,18 @@
+# ignore folder named out
+/out
+
+
+# ignore folder named .idea
+/.idea
+
+
+# ignore .iml file
+*.iml
+
+
+# ignore pom.xml file
+/pom.xml
+
+
+# ignore target folder
+/target
