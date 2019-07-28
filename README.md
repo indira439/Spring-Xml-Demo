@@ -1,12 +1,23 @@
 ## Spring Fundamentals with XML Configurations
 
-# Task 4:
+# Task 5:
 
 
-From the autowire-xml branch of spring-xml-demo repo created an aware-interface
+
+From the aware-interface branch of spring-xml-demo repo created a bean-lifecycle
 branch.
 
-Implemented ApplicationContextAware, BeanFactoryAware, BeanNameAware in the
-Movie class and printed their results.
+Added BeanLifecycleDemoBean class in com.stackroute.demo that implements
+InitializingBean and DisposableBean.
 
-Pushed the code to aware-interface branch.
+Override the required methods to print out messages.
+Define BeanLifecycleDemoBean as a bean in beans.xml.
+Run the application and observe the result.
+
+Added two methods customInit() and customDestroy() to the BeanLifecycleDemoBean
+class and print out custom messages.
+
+In the BeanLifecycleDemoBean bean definition, in beans.xml, set the customInit()
+and customDestroy() methods to be called.
+Run the application.
+
