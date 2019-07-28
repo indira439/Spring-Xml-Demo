@@ -12,7 +12,7 @@
 <!--    <bean id="movie" class="com.stackroute.domain.Movie" autowire="byName" scope="singleton">-->
 <!--    </bean>-->
 
-    <bean id="movie1" class="com.stackroute.domain.Movie" autowire="constructor">
+    <bean id="movie" class="com.stackroute.domain.Movie" autowire="constructor">
     </bean>
 
 </beans>

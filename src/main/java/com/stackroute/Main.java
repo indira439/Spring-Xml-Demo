@@ -24,8 +24,8 @@ public class Main {
          */
 
         //Set autoWire to constructor
-        Movie movie1 = applicationContext.getBean("movie1", Movie.class);
-        System.out.println(movie1);
+        Movie movie = applicationContext.getBean("movie", Movie.class);
+        System.out.println(movie);
 
     }
 }
