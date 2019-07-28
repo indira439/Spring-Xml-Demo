@@ -5,6 +5,15 @@ import org.springframework.beans.factory.InitializingBean;
 
 public class BeanLifecycleDemoBean implements InitializingBean, DisposableBean {
 
+//    private String message;
+//
+//    public void setMessage(String message){
+//        this.message  = message;
+//    }
+//    public void getMessage(){
+//        System.out.println("Your Message : " + message);
+//    }
+
     @Override
     public void afterPropertiesSet() throws Exception {
         System.out.println("The afterPropertiesSet() is called by Spring to perform initialization ");
